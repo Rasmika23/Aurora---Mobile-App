@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fallback favicon (served from assets folder) -->
+    <link rel="icon" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/images/splash.png" />
+
+    <title>react_native_restate</title>
+
+    <style>
+      /* Basic splash screen visible before the JS bundles mount. */
+      html, body { height: 100%; margin: 0; }
+      #expo-loading {
+        background: url('/assets/images/splash.png') center center / cover no-repeat;
+        background-color: #ffffff;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- This element will be shown until the app loads and then removed by script below -->
+    <div id="expo-loading"></div>
+
+    <div id="root"></div>
+
+    <script>
+      // Remove splash placeholder once the window finishes loading
+      window.addEventListener('load', function () {
+        var el = document.getElementById('expo-loading');
+        if (el && el.parentNode) el.parentNode.removeChild(el);
+      });
+    </script>
+  </body>
+</html>

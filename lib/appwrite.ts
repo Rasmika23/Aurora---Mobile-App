@@ -139,11 +139,23 @@ export async function getPropertyById({ id }: { id: string }) {
     const result = await databases.getDocument(
       config.databaseId!,
       config.propertiesCollectionId!,
-      id
+      id,
+      [Query.select(["*", "reviews", "agent"])]
     );
+
+
+    console.log("Appwrite Result Keys:", Object.keys(result));
+    if (result.reviews) {
+      console.log("Number of reviews found:", result.reviews.length);
+    } else {
+      console.warn("The 'reviews' attribute is missing from the response.");
+    }
+     
+
+
     return result;
   } catch (error) {
-    console.error(error);
+    console.error("Error Fertching property",error);
     return null;
   }
 }

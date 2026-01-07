@@ -105,7 +105,7 @@ const Property = () => {
             <View className="flex flex-row items-center gap-2">
               <Image source={icons.star} className="size-5" />
               <Text className="text-black-200 text-sm mt-1 font-rubik-medium">
-                {property?.rating} ({property?.reviews?.length || 0} reviews)
+                {property?.rating} ({property?.reviews?.length} reviews)
               </Text>
             </View>
           </View>

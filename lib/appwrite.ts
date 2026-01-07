@@ -140,16 +140,18 @@ export async function getPropertyById({ id }: { id: string }) {
       config.databaseId!,
       config.propertiesCollectionId!,
       id,
-      [Query.select(["*", "reviews", "agent"])]
+      [Query.select(["*", "reviews.*", "agent.*"])]
     );
 
 
     console.log("Appwrite Result Keys:", Object.keys(result));
     if (result.reviews) {
       console.log("Number of reviews found:", result.reviews.length);
+      
     } else {
       console.warn("The 'reviews' attribute is missing from the response.");
     }
+    
      
 
 

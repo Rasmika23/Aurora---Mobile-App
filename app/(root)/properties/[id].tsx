@@ -31,6 +31,14 @@ const Property = () => {
     },
   });
 
+  if (property) {
+    console.log("--- DEBUG PROPERTY DATA ---");
+    console.log("Property Keys:", Object.keys(property));
+    console.log("Agent Object:", JSON.stringify(property.agent, null, 2));
+    console.log("Reviews Array:", JSON.stringify(property.reviews, null, 2));
+    console.log("---------------------------");
+  }
+
   if (loading) {
     return (
       <View className="flex-1 items-center justify-center bg-white">
@@ -48,6 +56,7 @@ const Property = () => {
   }
 
   return (
+    
     <View>
       <ScrollView
         showsVerticalScrollIndicator={false}
@@ -139,16 +148,18 @@ const Property = () => {
             <View className="flex flex-row items-center justify-between mt-4">
               <View className="flex flex-row items-center">
                 <Image
-                  source={{ uri: property?.agent?.avatar }}
+                  source={{ uri: property?.agent.avatar}}
                   className="size-14 rounded-full"
                 />
 
                 <View className="flex flex-col items-start justify-center ml-3">
                   <Text className="text-lg text-black-300 text-start font-rubik-bold">
-                    {property?.agent?.name}
+                    {property?.agent.name}
+                    
                   </Text>
+                  
                   <Text className="text-sm text-black-200 text-start font-rubik-medium">
-                    {property?.agent?.email}
+                    {property?.agent.email}
                   </Text>
                 </View>
               </View>

@@ -84,6 +84,7 @@ export const settings = [
     title: "Notifications",
     icon: icons.bell,
   },
+  /*
   {
     title: "Security",
     icon: icons.shield,
@@ -99,7 +100,7 @@ export const settings = [
   {
     title: "Invite Friends",
     icon: icons.people,
-  },
+  },*/
 ];
 
 export const facilities = [
